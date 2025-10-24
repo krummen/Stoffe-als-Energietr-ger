@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lernhilfe Viertakt-Motor - Niveau 1</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; margin: 20px; background-color: #f4f4f4; color: #333; }
+        .container { max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h1, h2 { color: #0056b3; }
+        .takt { border: 1px solid #ddd; border-radius: 5px; padding: 15px; margin-bottom: 20px; }
+        .wortspeicher { background-color: #e7f3ff; border-left: 5px solid #0056b3; padding: 10px; margin-bottom: 20px; }
+        .wortspeicher-item, .textbaustein { display: inline-block; background-color: #d1e7dd; padding: 5px 10px; margin: 5px; border-radius: 5px; cursor: grab; }
+        .dropzone { border: 2px dashed #ccc; padding: 15px; min-height: 50px; margin-top: 10px; border-radius: 5px; background-color: #fafafa; }
+        .dropzone.hover { background-color: #e0e0e0; }
+        .auswahl p { margin: 5px 0; }
+        select { padding: 5px; font-size: 1em; }
+        .feedback { margin-top: 10px; padding: 10px; border-radius: 5px; display: none; }
+        .richtig { background-color: #d4edda; color: #155724; }
+        .falsch { background-color: #f8d7da; color: #721c24; }
+        button { background-color: #007bff; color: white; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer; font-size: 1em; margin-top: 10px;}
+        button:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Digitale Lernhilfe: Der Viertakt-Motor (Niveau 1)</h1>
+    <p>Hier bekommst du starke Unterstützung, um die Funktionsweise des Viertakt-Motors zu verstehen.</p>
+
+    <div class="wortspeicher">
+        <h2>Wortspeicher</h2>
+        <p>Diese Begriffe helfen dir, die Vorgänge zu beschreiben. Du kannst sie unten in die Felder ziehen.</p>
+        <div id="drag-container">
+            <div class="textbaustein" draggable="true" id="drag1">Das Benzin-Luft-Gemisch wird in den Zylinder gesaugt.</div>
+            <div class="textbaustein" draggable="true" id="drag2">Das Gemisch wird stark zusammengedrückt und erhitzt sich.</div>
+            <div class="textbaustein" draggable="true" id="drag3">Die Zündkerze zündet das Gemisch. Es verbrennt explosionsartig und drückt den Kolben nach unten.</div>
+            <div class="textbaustein" draggable="true" id="drag4">Der Kolben drückt die Abgase aus dem Zylinder.</div>
+        </div>
+    </div>
+
+    <!-- Takt 1 -->
+    <div class="takt">
+        <h2>1. Takt: Ansaugen</h2>
+        <p><strong>Was passiert in diesem Takt?</strong> Ziehe den richtigen Satz hierher.</p>
+        <div class="dropzone" id="drop1"></div>
+        <div class="auswahl">
+            <p>Das Volumen (V) <select id="t1_v"><option value="zu">nimmt zu</option><option value="ab">nimmt ab</option></select>.</p>
+            <p>Der Druck (p) <select id="t1_p"><option value="zu">nimmt zu</option><option value="ab">nimmt ab</option></select>.</p>
+            <p>Die Temperatur (T) <select id="t1_t"><option value="zu">nimmt zu</option><option value="ab">nimmt ab</option></select>.</p>
+        </div>
+    </div>
+
+    <!-- Takt 2 -->
+    <div class="takt">
+        <h2>2. Takt: Verdichten</h2>
+        <p><strong>Was passiert in diesem Takt?</strong> Ziehe den richtigen Satz hierher.</p>
+        <div class="dropzone" id="drop2"></div>
+         <div class="auswahl">
+            <p>Das Volumen (V) <select id="t2_v"><option value="zu">nimmt zu</option><option value="ab">nimmt ab</option></select>.</p>
+            <p>Der Druck (p) <select id="t2_p"><option value="zu">nimmt zu</option><option value="ab">nimmt ab</option></select>.</p>
+            <p>Die Temperatur (T) <select id="t2_t"><option value="zu">nimmt zu</option><option value="ab">nimmt ab</option></select>.</p>
+        </div>
+    </div>
+
+    <!-- Takt 3 -->
+    <div class="takt">
+        <h2>3. Takt: Arbeiten</h2>
+        <p><strong>Was passiert in diesem Takt?</strong> Ziehe den richtigen Satz hierher.</p>
+        <div class="dropzone" id="drop3"></div>
+         <div class="auswahl">
+            <p>Das Volumen (V) <select id="t3_v"><option value="zu">nimmt zu</option><option value="ab">nimmt ab</option></select>.</p>
+            <p>Der Druck (p) <select id="t3_p"><option value="zu">nimmt zu</option><option value="ab">nimmt ab</option></select>.</p>
+            <p>Die Temperatur (T) <select id="t3_t"><option value="zu">nimmt zu</option><option value="ab">nimmt ab</option></select>.</p>
+        </div>
+    </div>
+
+    <!-- Takt 4 -->
+    <div class="takt">
+        <h2>4. Takt: Ausstoßen</h2>
+        <p><strong>Was passiert in diesem Takt?</strong> Ziehe den richtigen Satz hierher.</p>
+        <div class="dropzone" id="drop4"></div>
+         <div class="auswahl">
+            <p>Das Volumen (V) <select id="t4_v"><option value="zu">nimmt zu</option><option value="ab">nimmt ab</option></select>.</p>
+            <p>Der Druck (p) <select id="t4_p"><option value="zu">nimmt zu</option><option value="ab">nimmt ab</option></select>.</p>
+            <p>Die Temperatur (T) <select id="t4_t"><option value="zu">nimmt zu</option><option value="ab">nimmt ab</option></select>.</p>
+        </div>
+    </div>
+
+    <button onclick="checkAnswers()">Überprüfen</button>
+    <div id="feedback-gesamt" class="feedback"></div>
+    <a href="index.html" class="home-link">Zurück zur Auswahl</a>
+
+</div>
+
+<script>
+    const draggables = document.querySelectorAll('.textbaustein');
+    const dropzones = document.querySelectorAll('.dropzone');
+    let draggedItem = null;
+
+    draggables.forEach(draggable => {
+        draggable.addEventListener('dragstart', (e) => {
+            draggedItem = e.target;
+            setTimeout(() => {
+                e.target.style.display = 'none';
+            }, 0);
+        });
+
+        draggable.addEventListener('dragend', (e) => {
+            setTimeout(() => {
+                draggedItem.style.display = 'inline-block';
+                draggedItem = null;
+            }, 0);
+        });
+    });
+
+    dropzones.forEach(dropzone => {
+        dropzone.addEventListener('dragover', e => {
+            e.preventDefault();
+            e.target.classList.add('hover');
+        });
+        dropzone.addEventListener('dragleave', e => {
+            e.target.classList.remove('hover');
+        });
+        dropzone.addEventListener('drop', e => {
+            e.preventDefault();
+            e.target.classList.remove('hover');
+            if (e.target.children.length === 0) {
+                 e.target.appendChild(draggedItem);
+            }
+        });
+    });
+
+    function checkAnswers() {
+        let correct = true;
+
+        // Check Drag & Drop
+        if (document.querySelector('#drop1').firstChild?.id !== 'drag1') correct = false;
+        if (document.querySelector('#drop2').firstChild?.id !== 'drag2') correct = false;
+        if (document.querySelector('#drop3').firstChild?.id !== 'drag3') correct = false;
+        if (document.querySelector('#drop4').firstChild?.id !== 'drag4') correct = false;
+
+        // Check Selects
+        if (document.getElementById('t1_v').value !== 'zu') correct = false;
+        if (document.getElementById('t1_p').value !== 'ab') correct = false;
+        if (document.getElementById('t1_t').value !== 'ab') correct = false;
+        
+        if (document.getElementById('t2_v').value !== 'ab') correct = false;
+        if (document.getElementById('t2_p').value !== 'zu') correct = false;
+        if (document.getElementById('t2_t').value !== 'zu') correct = false;
+        
+        if (document.getElementById('t3_v').value !== 'zu') correct = false;
+        if (document.getElementById('t3_p').value !== 'zu') correct = false;
+        if (document.getElementById('t3_t').value !== 'zu') correct = false;
+
+        if (document.getElementById('t4_v').value !== 'ab') correct = false;
+        // Druck und Temp bei T4 sind komplexer, lassen wir mal offen für Diskussion
+        
+        const feedback = document.getElementById('feedback-gesamt');
+        if (correct) {
+            feedback.textContent = 'Super! Alles richtig zugeordnet und ausgewählt. Du hast die 4 Takte verstanden.';
+            feedback.className = 'feedback richtig';
+        } else {
+            feedback.textContent = 'Das ist noch nicht ganz richtig. Schau dir die Bewegungen des Kolbens und die Ventile nochmal genau an und versuche es erneut.';
+            feedback.className = 'feedback falsch';
+        }
+        feedback.style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
