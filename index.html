@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemie Lernhilfen</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background-color: #e9ecef;
+            color: #212529;
+        }
+        .header {
+            background-color: #343a40;
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.8rem;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .topic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .topic-card {
+            background: white;
+            border: 1px solid #dee2e6;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: #212529;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .topic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+        .topic-card .card-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+        }
+        .topic-card h2 {
+            margin-top: 0;
+            font-size: 1.5rem;
+            color: #0056b3;
+        }
+        .topic-card p {
+            margin-bottom: 0;
+            color: #495057;
+        }
+        .topic-card .card-footer {
+            background-color: #f8f9fa;
+            padding: 1rem 1.5rem;
+            text-align: right;
+            border-top: 1px solid #dee2e6;
+            font-weight: bold;
+            color: #0056b3;
+        }
+        .topic-card.disabled {
+            background-color: #f8f9fa;
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        .topic-card.disabled:hover {
+            transform: none;
+            box-shadow: none;
+        }
+        .topic-card.disabled h2 { color: #6c757d; }
+        .topic-card.disabled .card-footer { color: #6c757d; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Digitale Lernhilfen für den Chemieunterricht</h1>
+    </header>
+
+    <main class="container">
+        <div class="topic-grid">
+
+            <!-- Thema 1: Viertakt-Motor -->
+            <a href="viertaktmotor.html" class="topic-card">
+                <div class="card-content">
+                    <h2>Der Viertakt-Motor</h2>
+                    <p>Grundlagen der Funktionsweise, Energieumwandlung und die vier entscheidenden Takte eines Ottomotors interaktiv verstehen.</p>
+                </div>
+                <div class="card-footer">
+                    Zu den Übungen &rarr;
+                </div>
+            </a>
+
+            <!-- Platzhalter für nächstes Thema (aktuell deaktiviert) -->
+            <!-- Um es zu aktivieren: 1. "disabled" aus der class entfernen. 2. a-tag mit href versehen, z.B. href="benzinsorten.html" -->
+            <a href="#" class="topic-card disabled">
+                <div class="card-content">
+                    <h2>Benzinsorten & Klopffestigkeit</h2>
+                    <p>Erfahre, was die Oktanzahl bedeutet und wie die Struktur von Alkanen die Qualität von Benzin beeinflusst. (In Kürze verfügbar)</p>
+                </div>
+                <div class="card-footer">
+                    Bald verfügbar
+                </div>
+            </a>
+            
+            <!-- Hier einfach weitere Themen-Karten kopieren und anpassen -->
+
+        </div>
+    </main>
+
+</body>
+</html>
